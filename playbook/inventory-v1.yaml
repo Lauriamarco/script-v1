@@ -1,0 +1,9 @@
+host-1:
+  hosts:
+    example-IP
+host-2:
+  hosts:
+    example-IP2
+    example-IP3
+vars:
+  type-dc: 1

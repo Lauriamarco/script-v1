@@ -1,0 +1,21 @@
+---
+- name: Update servers
+  hosts: all
+  become: yes
+  task:
+    - name: Nagios Configurations
+      block:
+        - name: Install Nagios
+          #TODO
+        - name: Add configuration host-1
+          copy:
+            src: /root/files/conf/nagios-conf-host-1-{{ type-dc }}.conf
+            dest: /root/etc/nagios/nrpe.conf
+          #TODO
+          when: "'host-1' in group_names"
+        - name: Add configuration host-2
+          copy:
+            src: /root/files/conf/nagios-conf-host-2-{{ type-dc }}.conf
+            dest: /root/etc/nagios/nrpe.conf
+          #TODO
+          when: "'host-2' in group_names"
